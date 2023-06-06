@@ -94,7 +94,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 													clsx(
 														'group flex items-center px-2 py-2 text-sm font-medium rounded-md',
 														isActive
-															? 'bg-active text-white font-medium hover:bg-active'
+															? 'bg-active text-white hover:bg-active'
 															: 'text-white hover:bg-active hover:text-white'
 													)
 												}>
@@ -123,7 +123,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 													clsx(
 														'group flex w-full items-center rounded-md py-2 pl-2 pr-1 text-left text-sm font-medium focus:outline-none',
 														open
-															? 'bg-active text-white font-medium hover:bg-active'
+															? 'bg-active text-white hover:bg-active'
 															: 'text-white hover:bg-active hover:text-white'
 													)
 												}>
@@ -140,17 +140,21 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 														/>
 
 														<span className="flex-1">{item.name}</span>
-
 														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															fill="none"
+															viewBox="0 0 24 24"
+															strokeWidth={2}
+															stroke="currentColor"
 															className={clsx(
 																'ml-3 h-4 w-5 mr-3 flex-shrink-0 transform transition-colors duration-150 ease-in-out group-hover:text-white',
 																open ? 'rotate-90 text-white' : 'text-white'
-															)}
-															viewBox="0 0 256 512"
-															aria-hidden="true">
+															)}>
 															<path
-																fill="currentColor"
-																d="M192 256L83.5 406.2c-12.5 12.5-32.8 12.5-45.3 0L20.7 381.9c-12.5-12.5-12.5-32.8 0-45.3L114.9 256 20.7 170.4c-12.5-12.5-12.5-32.8 0-45.3L38.2 85.8c12.5-12.5 32.8-12.5 45.3 0L192 256z"></path>
+																strokeLinecap="round"
+																strokeLinejoin="round"
+																d="M8.25 4.5l7.5 7.5-7.5 7.5"
+															/>
 														</svg>
 													</>
 												)}
@@ -162,9 +166,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 														to={subItem.href}
 														className={({ isActive }) =>
 															clsx(
-																'group flex w-full items-center rounded-md py-2 pl-11 pr-2 text-sm font-medium text-white hover:bg-active hover:text-white',
+																'group font-normal flex w-full items-center rounded-md py-2 pl-11 pr-2 text-sm  text-white hover:bg-active hover:text-white',
 																isActive
-																	? 'bg-primary text-blue-600 font-medium hover:bg-active'
+																	? 'bg-primary text-blue-600 hover:bg-active'
 																	: 'text-white hover:bg-active hover:text-white'
 															)
 														}>
@@ -201,7 +205,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 											clsx(
 												'group flex items-center px-2 py-2 text-sm font-medium rounded-md',
 												isActive
-													? 'bg-active text-blue-600 font-medium hover:bg-active'
+													? 'bg-active text-blue-600 hover:bg-active'
 													: 'text-white hover:bg-active hover:text-white'
 											)
 										}>
@@ -230,7 +234,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 											clsx(
 												'group flex w-full items-center rounded-md py-2 pl-2 pr-1 text-left text-sm font-medium focus:outline-none',
 												open
-													? 'bg-primary text-blue-600 font-medium hover:bg-active'
+													? 'bg-primary text-blue-600 hover:bg-active'
 													: 'text-white hover:bg-active hover:text-white'
 											)
 										}>
@@ -248,15 +252,20 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 												<span className="flex-1">{item.name}</span>
 
 												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													fill="none"
+													viewBox="0 0 24 24"
+													strokeWidth={2}
+													stroke="currentColor"
 													className={clsx(
 														'ml-3 h-4 w-5 mr-3 flex-shrink-0 transform transition-colors duration-150 ease-in-out group-hover:text-white',
 														open ? 'rotate-90 text-white' : 'text-white'
-													)}
-													viewBox="0 0 256 512"
-													aria-hidden="true">
+													)}>
 													<path
-														fill="currentColor"
-														d="M192 256L83.5 406.2c-12.5 12.5-32.8 12.5-45.3 0L20.7 381.9c-12.5-12.5-12.5-32.8 0-45.3L114.9 256 20.7 170.4c-12.5-12.5-12.5-32.8 0-45.3L38.2 85.8c12.5-12.5 32.8-12.5 45.3 0L192 256z"></path>
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														d="M8.25 4.5l7.5 7.5-7.5 7.5"
+													/>
 												</svg>
 											</>
 										)}
@@ -268,9 +277,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 												to={subItem.href}
 												className={({ isActive }) =>
 													clsx(
-														'group flex w-full items-center rounded-md py-2 pl-11 pr-2 text-sm font-medium text-white hover:bg-active hover:text-white',
+														'group font-normal flex w-full items-center rounded-md py-2 pl-11 pr-2 text-sm text-white hover:bg-active hover:text-white',
 														isActive
-															? 'bg-primary text-active font-medium hover:bg-active'
+															? 'bg-primary text-active hover:bg-active'
 															: 'text-white hover:bg-active hover:text-white'
 													)
 												}>
