@@ -1,10 +1,7 @@
 import {
 	Bars3Icon,
-	CalendarIcon,
 	ChartBarIcon,
-	Cog6ToothIcon,
 	Cog8ToothIcon,
-	ShareIcon,
 	UsersIcon,
 	XMarkIcon
 } from '@heroicons/react/24/outline'
