@@ -21,7 +21,7 @@ export const Dashboard = () => {
 				<div className="space-y-16 basis-3/4 pt-8">
 					<div className="space-y-5">
 						<h5 className="text-sm font-semibold text-heading">This Week</h5>
-						<div className="grid grid-cols-4 gap-x-7 max-md:grid-cols-2 max-md:gap-x-10 max-md:gap-y-7">
+						<div className="grid grid-cols-4 gap-7 max-md:grid-cols-2">
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
@@ -30,15 +30,16 @@ export const Dashboard = () => {
 					</div>
 					<div className="space-y-5">
 						<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
-						<div className="flex flex-wrap justify-around">
+						<div className="grid grid-cols-4 gap-7 max-md:grid-cols-2">
 							<DashboardCard image={personImage} name="Advisor Name" status="Available" />
 							<DashboardCard image={personImage} name="Advisor Name" status="Inactive" />
+							<DashboardCard image={personImage} name="Advisor Name" status="Hired" />
 							<DashboardCard image={personImage} name="Advisor Name" status="Hired" />
 						</div>
 					</div>
 					<div className="space-y-5">
 						<h2 className="font-semibold text-xl text-heading">Companies</h2>
-						<div className="flex flex-wrap justify-around">
+						<div className="grid grid-cols-4 gap-7 max-md:grid-cols-2">
 							<DashboardCard
 								className="shadow-none"
 								image={companyImage}
