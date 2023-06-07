@@ -2,11 +2,10 @@
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
-		fontFamily: {
-			sans: ['Poppins', 'sans-serif'],
-			serif: ['Merriweather', 'serif']
-		},
 		extend: {
+			fontFamily: {
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				'primary': '#3C5FDF',
 				'active': '#2F51CA',
@@ -15,6 +14,10 @@ module.exports = {
 				'status-success': '#00AA77',
 				'status-false': '#E34300',
 				'status-neutral': '#3B5FDF',
+				'search': '#E0E7FF',
+				'header': '#1C1C1C',
+				'heading': '#2A3046',
+				'button': '#EF5600'
 			}
 		}
 	},

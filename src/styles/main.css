@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-		font-family: 'Questrial', 'sans-serif';
-	}
-}
-
 body {
 	touch-action: pan-x pan-y;
 }
