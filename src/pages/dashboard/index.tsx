@@ -2,12 +2,11 @@ import React from 'react'
 import { AppLayout } from 'components/app/layout'
 import { DashboardStatsCard } from 'components/dashboard/stats-card'
 import { DashboardCard } from 'components/dashboard/card'
-import personImage from 'assets/dashboard/person.png'
-import companyImage from 'assets/dashboard/company.png'
-import { Notifications } from 'components/dashboard/notifications'
 import { AppHeader } from 'components/app/header'
 import { Container } from 'components/app/container'
 import { AppFooter } from 'components/app/footer'
+import { companyIcon, personIcon } from 'assets/icons'
+import { Notification } from 'components/app/notification'
 
 export const Dashboard = () => {
 	const breadcrumbs = [
@@ -21,7 +20,7 @@ export const Dashboard = () => {
 				<div className="space-y-16 basis-3/4 pt-8">
 					<div className="space-y-5">
 						<h5 className="text-sm font-semibold text-heading">This Week</h5>
-						<div className="grid grid-cols-4 gap-7 max-md:grid-cols-2">
+						<div className="grid grid-cols-2 gap-7 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-7">
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
@@ -30,31 +29,31 @@ export const Dashboard = () => {
 					</div>
 					<div className="space-y-5">
 						<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
-						<div className="grid grid-cols-4 gap-7 max-md:grid-cols-2">
-							<DashboardCard image={personImage} name="Advisor Name" status="Available" />
-							<DashboardCard image={personImage} name="Advisor Name" status="Inactive" />
-							<DashboardCard image={personImage} name="Advisor Name" status="Hired" />
-							<DashboardCard image={personImage} name="Advisor Name" status="Hired" />
+						<div className="grid grid-cols-2 gap-7 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-7">
+							<DashboardCard image={personIcon} name="Advisor Name" status="Available" />
+							<DashboardCard image={personIcon} name="Advisor Name" status="Inactive" />
+							<DashboardCard image={personIcon} name="Advisor Name" status="Hired" />
+							<DashboardCard image={personIcon} name="Advisor Name" status="Hired" />
 						</div>
 					</div>
 					<div className="space-y-5">
 						<h2 className="font-semibold text-xl text-heading">Companies</h2>
-						<div className="grid grid-cols-4 gap-7 max-md:grid-cols-2">
+						<div className="grid grid-cols-2 gap-7 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-7">
 							<DashboardCard
 								className="shadow-none"
-								image={companyImage}
+								image={companyIcon}
 								name="Company Name"
 								status="Available"
 							/>
 							<DashboardCard
 								className="shadow-none"
-								image={companyImage}
+								image={companyIcon}
 								name="Company Name"
 								status="Inactive"
 							/>
 							<DashboardCard
 								className="shadow-none"
-								image={companyImage}
+								image={companyIcon}
 								name="Company Name"
 								status="Recruiting"
 							/>
@@ -63,7 +62,7 @@ export const Dashboard = () => {
 					<AppFooter />
 				</div>
 				<div className="basis-1/4">
-					<Notifications />
+					<Notification expandable={false} />
 				</div>
 			</Container>
 		</AppLayout>
