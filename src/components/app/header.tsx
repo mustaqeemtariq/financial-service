@@ -1,14 +1,9 @@
-import {
-	ArrowRightIcon,
-	BookmarkSquareIcon,
-	ChevronRightIcon,
-	StarIcon
-} from '@heroicons/react/24/outline'
 import React from 'react'
+import { ArrowRightIcon, BookmarkSquareIcon, StarIcon } from '@heroicons/react/24/outline'
 import { Search } from './search-input'
-import personImage from 'assets/dashboard/person.png'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
+import { personIcon } from 'assets/icons'
 
 interface AppHeaderProps {
 	breadcrumbs?: { title: string; path: string }[]
@@ -34,7 +29,7 @@ export const AppHeader = ({ breadcrumbs }: AppHeaderProps) => {
 			<div className="flex space-x-20">
 				<Search placeholder="Search" className="w-40" />
 				<div className="flex space-x-5 items-center">
-					<img src={personImage} alt="person" className="w-12 h-12" />
+					<img src={personIcon} alt="person" className="w-12 h-12" />
 					<p className="text-header">Admin J.Smith</p>
 					<div className="flex items-center">
 						<span className="text-button font-bold">|</span>
