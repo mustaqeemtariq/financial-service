@@ -10,7 +10,7 @@ interface NotificationProps {
 }
 
 export const Notification = ({
-	openNotifications,
+	openNotifications = true,
 	setOpenNotifications,
 	expandable = true
 }: NotificationProps) => {
@@ -43,7 +43,8 @@ export const Notification = ({
 				onClick={() => setOpenNotifications?.(false)}
 				className={clsx(
 					'absolute flex cursor-pointer items-center justify-center inset-y-1/2 right-full bg-stats h-20 w-3.5',
-					!openNotifications && expandable && 'hidden'
+					!openNotifications && 'hidden',
+					!expandable && 'hidden'
 				)}>
 				<ChevronRightIcon className="h-4 w-4 opacity-30" aria-hidden="true" />
 			</div>
@@ -51,7 +52,8 @@ export const Notification = ({
 				onClick={() => setOpenNotifications?.(true)}
 				className={clsx(
 					'absolute flex cursor-pointer items-center justify-center inset-y-1/2 right-full align-middle bg-stats h-20 w-3.5',
-					openNotifications && expandable && 'hidden'
+					openNotifications && 'hidden',
+					!expandable && 'hidden'
 				)}>
 				<ChevronLeftIcon className="h-4 w-4 opacity-30" aria-hidden="true" />
 			</div>
