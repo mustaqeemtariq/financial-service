@@ -3,7 +3,7 @@ import { ArrowRightIcon, BookmarkSquareIcon, StarIcon } from '@heroicons/react/2
 import { Search } from './search-input'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
-import { personIcon } from 'assets/icons'
+import { logoutIcon, personIcon } from 'assets/icons'
 
 interface AppHeaderProps {
 	breadcrumbs?: { title: string; path: string }[]
@@ -32,8 +32,7 @@ export const AppHeader = ({ breadcrumbs }: AppHeaderProps) => {
 					<img src={personIcon} alt="person" className="w-12 h-12" />
 					<p className="text-header">Admin J.Smith</p>
 					<div className="flex items-center">
-						<span className="text-button font-bold">|</span>
-						<ArrowRightIcon className="w-4 h-4 stroke-button stroke-5" aria-hidden="true" />
+						<img src={logoutIcon} className="w-5 h-5 rotate-180" alt="logout" />
 					</div>
 				</div>
 			</div>
