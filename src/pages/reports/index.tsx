@@ -25,7 +25,7 @@ export const Reports = () => {
 			<AppHeader breadcrumbs={breadcrumbs} />
 			<Container>
 				<div className="pt-8 space-y-5">
-					<div className="flex justify-between">
+					<div className="flex justify-between items-center">
 						<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
 						<Filter options={options} />
 					</div>
