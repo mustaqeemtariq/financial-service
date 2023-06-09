@@ -14,9 +14,9 @@ export const DashboardCard = ({ image, name, status, className }: DashboardCardP
 			className={clsx(
 				'py-4 px-5 shadow-2xl text-center space-y-5 border border-black border-opacity-20',
 				className,
-				status === 'Available' && 'border border-status-success',
-				status === 'Inactive' && 'border border-status-false',
-				status === 'Recruiting' && 'border border-status-neutral'
+				status === 'Available' && 'border border-success',
+				status === 'Inactive' && 'border border-false',
+				status === 'Recruiting' && 'border border-neutral'
 			)}>
 			<img src={image} alt="card-picture" className="mx-auto h-24 w-24" />
 			<div className="space-y-2">
@@ -24,9 +24,9 @@ export const DashboardCard = ({ image, name, status, className }: DashboardCardP
 				<p
 					className={clsx(
 						'text-xs',
-						status === 'Available' && 'text-status-success',
-						status === 'Inactive' && 'text-status-false',
-						status === 'Recruiting' && 'text-status-neutral'
+						status === 'Available' && 'text-success',
+						status === 'Inactive' && 'text-false',
+						status === 'Recruiting' && 'text-neutral'
 					)}>
 					{status}
 				</p>
