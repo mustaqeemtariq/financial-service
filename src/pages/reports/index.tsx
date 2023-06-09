@@ -13,10 +13,7 @@ export const Reports = () => {
 		{ title: 'Reports', path: '/reports' },
 		{ title: 'Top Advisors', path: '/reports/top-advisors' }
 	]
-	const [status, setStatus] = useState(false)
-	const isNotificationOpen = (value = false) => {
-		setStatus(value)
-	}
+	const [open, setOpen] = useState(false)
 
 	return (
 		<AppLayout>
@@ -27,7 +24,7 @@ export const Reports = () => {
 					<div
 						className={clsx(
 							'grid gap-y-7 gap-x-11',
-							status
+							open
 								? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6'
 								: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-7'
 						)}>
@@ -50,7 +47,7 @@ export const Reports = () => {
 					</div>
 					<AppFooter />
 				</div>
-				<Notification getStatus={isNotificationOpen} />
+				<Notification openNotifications={open} setOpenNotifications={setOpen} />
 			</Container>
 		</AppLayout>
 	)

@@ -1,18 +1,22 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { companyIcon, personIcon } from 'assets/icons'
 import clsx from 'clsx'
-import React, { useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
 interface NotificationProps {
 	expandable?: boolean
-	getStatus?: (value: boolean) => void
+	openNotifications?: boolean
+	setOpenNotifications?: Dispatch<SetStateAction<boolean>>
 }
 
-export const Notification = ({ getStatus, expandable = true }: NotificationProps) => {
-	const [open, setOpen] = useState(false)
+export const Notification = ({
+	openNotifications,
+	setOpenNotifications,
+	expandable = true
+}: NotificationProps) => {
 	return (
-		<div className={clsx('relative bg-stats min-h-full', !open ? 'px-4' : 'p-6')}>
-			<div className={clsx('space-y-5', !open && 'hidden')}>
+		<div className={clsx('relative bg-stats min-h-full', !openNotifications ? 'px-4' : 'p-6')}>
+			<div className={clsx('space-y-5', !openNotifications && 'hidden')}>
 				<h5 className="text-sm font-semibold">Notifications</h5>
 				<div>
 					<p className="text-sm">ABC Company Calling</p>
@@ -36,24 +40,18 @@ export const Notification = ({ getStatus, expandable = true }: NotificationProps
 				</div>
 			</div>
 			<div
-				onClick={() => {
-					getStatus?.(false)
-					setOpen(false)
-				}}
+				onClick={() => setOpenNotifications?.(false)}
 				className={clsx(
 					'absolute flex cursor-pointer items-center justify-center inset-y-1/2 right-full bg-stats h-20 w-3.5',
-					!open && expandable && 'hidden'
+					!openNotifications && expandable && 'hidden'
 				)}>
 				<ChevronRightIcon className="h-4 w-4 opacity-30" aria-hidden="true" />
 			</div>
 			<div
-				onClick={() => {
-					getStatus?.(true)
-					setOpen(true)
-				}}
+				onClick={() => setOpenNotifications?.(true)}
 				className={clsx(
 					'absolute flex cursor-pointer items-center justify-center inset-y-1/2 right-full align-middle bg-stats h-20 w-3.5',
-					open && expandable && 'hidden'
+					openNotifications && expandable && 'hidden'
 				)}>
 				<ChevronLeftIcon className="h-4 w-4 opacity-30" aria-hidden="true" />
 			</div>
