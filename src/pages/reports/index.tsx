@@ -7,11 +7,16 @@ import { AppHeader } from 'components/app/header'
 import { personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
 import clsx from 'clsx'
+import { Filter } from 'components/inputs/filter'
 
 export const Reports = () => {
 	const breadcrumbs = [
 		{ title: 'Reports', path: '/reports' },
 		{ title: 'Top Advisors', path: '/reports/top-advisors' }
+	]
+	const options = [
+		{ name: 'All (Hired/ Available/ In-active)' },
+		{ name: 'All (Hired/ Available/ In-active)' }
 	]
 	const [open, setOpen] = useState(false)
 
@@ -20,7 +25,10 @@ export const Reports = () => {
 			<AppHeader breadcrumbs={breadcrumbs} />
 			<Container>
 				<div className="pt-8 space-y-5">
-					<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
+					<div className="flex justify-between">
+						<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
+						<Filter options={options} />
+					</div>
 					<div
 						className={clsx(
 							'grid gap-y-7 gap-x-11',
