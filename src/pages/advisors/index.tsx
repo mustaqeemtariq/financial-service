@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import clsx from 'clsx'
+
 import { AppLayout } from 'components/app/layout'
 import { Container } from 'components/app/container'
 import { DashboardCard } from 'components/dashboard/card'
@@ -6,7 +8,6 @@ import { AppFooter } from 'components/app/footer'
 import { AppHeader } from 'components/app/header'
 import { personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import clsx from 'clsx'
 
 export const Advisors = () => {
 	const breadcrumbs = [
