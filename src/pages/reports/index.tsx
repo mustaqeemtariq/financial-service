@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import clsx from 'clsx'
+
 import { AppLayout } from 'components/app/layout'
 import { Container } from 'components/app/container'
 import { DashboardCard } from 'components/dashboard/card'
@@ -6,12 +8,11 @@ import { AppFooter } from 'components/app/footer'
 import { AppHeader } from 'components/app/header'
 import { personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import clsx from 'clsx'
 import { Filter } from 'components/inputs/filter'
 
 export const Reports = () => {
 	const breadcrumbs = [
-		{ title: 'Reports', path: '/reports' },
+		{ title: 'Reports', path: '/reports/top-advisors' },
 		{ title: 'Top Advisors', path: '/reports/top-advisors' }
 	]
 	const options = [
