@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useState } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 import moment from 'moment'
@@ -8,16 +8,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	onDateChange?: (value: string, name: string) => void
 }
 
-export const Date = ({ name, label, placeholder, onDateChange }: InputProps) => {
-	const [input, setInput] = useState<string>('')
+export const InputDate = ({ value, name, label, placeholder, onDateChange }: InputProps) => {
 	const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { value, name } = event.target
 		if (value === '') {
-			onDateChange?.('', name)
-			return setInput('')
+			return onDateChange?.('', name)
 		}
 		const selectedDate = moment(event.target.value).format('MMM DD, YYYY')
-		setInput(selectedDate)
 		onDateChange?.(selectedDate, name)
 	}
 	return (
@@ -37,7 +34,7 @@ export const Date = ({ name, label, placeholder, onDateChange }: InputProps) => 
 				<input
 					type="text"
 					disabled
-					value={input}
+					value={value}
 					placeholder={placeholder}
 					className="w-36 border-transparent py-1 pl-0 font-semibold sm:text-sm"
 				/>
