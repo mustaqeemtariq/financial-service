@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Sidebar } from './sidebar'
 import { AppHeader } from './header'
 
@@ -11,7 +12,6 @@ interface AppLayoutProps {
 
 export const AppLayout: React.FC<AppLayoutProps> = ({
 	children,
-	title,
 	renderHeader = false,
 	renderSidebar = true
 }) => {

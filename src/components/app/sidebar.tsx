@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
 	Bars3Icon,
 	ChartBarIcon,
@@ -7,10 +8,7 @@ import {
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { NavLink, useLocation } from 'react-router-dom'
-
 import { Disclosure } from '@headlessui/react'
-import { useState } from 'react'
-
 interface SidebarProps {
 	children: React.ReactNode
 }
@@ -25,6 +23,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 			children: [{ name: 'clients', href: '/' }]
 		},
 		{
+			name: 'Advisors',
+			icon: UsersIcon,
+			current: false,
+			children: [{ name: 'Report', href: '/' }]
+		},
+		{
 			name: 'Connect',
 			icon: UsersIcon,
 			current: false,
@@ -32,12 +36,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 		},
 		{
 			name: 'Reports',
-			icon: UsersIcon,
-			current: false,
-			children: [{ name: 'Report', href: '/' }]
-		},
-		{
-			name: 'Advisors',
 			icon: UsersIcon,
 			current: false,
 			children: [
@@ -181,7 +179,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 					</div>
 				</div>
 				<div className="flex flex-shrink-0 p-4 flex-col text-white space-y-4">
-					<div className="flex space-x-2 items-center">
+					<div className="flex space-x-2 items-center cursor-pointer">
 						<Cog8ToothIcon className="h-4 w-5" aria-hidden="true" />
 						<span>Settings</span>
 					</div>
