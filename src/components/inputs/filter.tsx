@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
-
 interface FilterProps {
 	options: { name: string }[]
 }
@@ -24,12 +23,12 @@ export const Filter = ({ options }: FilterProps) => {
 						leave="transition ease-in duration-100"
 						leaveFrom="opacity-100"
 						leaveTo="opacity-0">
-						<Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+						<Listbox.Options className="absolute mt-1 max-h-60 w-fit overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
 							{options.map((option, optionIdx) => (
 								<Listbox.Option
 									key={optionIdx}
 									className={({ active }) =>
-										`relative cursor-default select-none py-2 px-4 text-sm ${
+										`relative cursor-default select-none py-2 pl-10 pr-6 text-sm ${
 											active ? 'bg-pagination text-active' : 'text-gray-900'
 										}`
 									}
