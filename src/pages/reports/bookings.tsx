@@ -8,7 +8,8 @@ import { AppHeader } from 'components/app/header'
 import { Pagination } from 'components/app/pagination'
 import { companyIcon, personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import { Date } from 'components/inputs/date'
+import { InputDate } from 'components/inputs/date'
+import { toast } from 'react-hot-toast'
 
 export const Bookings = () => {
 	const breadcrumbs = [
@@ -78,7 +79,13 @@ export const Bookings = () => {
 
 	const onDateChange = (value: string, name: string) => {
 		if (name === 'from') setSelectedDate(prev => ({ ...prev, from: value }))
-		if (name === 'to') setSelectedDate(prev => ({ ...prev, to: value }))
+		if (name === 'to') {
+			if (new Date(value) > new Date(selectedDate.from)) {
+				setSelectedDate(prev => ({ ...prev, to: value }))
+			} else {
+				toast.error('To Date cannot be less than From Date')
+			}
+		}
 	}
 
 	const renderComponent = (items: any) => {
@@ -118,8 +125,13 @@ export const Bookings = () => {
 					<div className="flex justify-between items-center">
 						<h2 className="font-semibold text-xl text-heading">Bookings</h2>
 						<div className="flex items-center space-x-2">
-							<Date label="From" name="from" onDateChange={onDateChange} />
-							<Date label="To" name="to" onDateChange={onDateChange} />
+							<InputDate
+								value={selectedDate.from}
+								label="From"
+								name="from"
+								onDateChange={onDateChange}
+							/>
+							<InputDate value={selectedDate.to} label="To" name="to" onDateChange={onDateChange} />
 						</div>
 					</div>
 					<Pagination
