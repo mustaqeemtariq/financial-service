@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const AppFooter = () => {
 	return (
 		<div className="flex justify-end space-x-5 pt-8 pb-6 text-xs text-black opacity-40">

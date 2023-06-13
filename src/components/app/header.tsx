@@ -1,8 +1,8 @@
-import React from 'react'
-import { ArrowRightIcon, BookmarkSquareIcon, StarIcon } from '@heroicons/react/24/outline'
-import { Search } from './search-input'
+import { BookmarkSquareIcon, StarIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
+
+import { Search } from './search-input'
 import { logoutIcon, personIcon } from 'assets/icons'
 
 interface AppHeaderProps {
@@ -19,7 +19,7 @@ export const AppHeader = ({ breadcrumbs }: AppHeaderProps) => {
 					{breadcrumbs?.map((breadcrumb, index) => (
 						<div className="flex space-x-2" key={breadcrumb.title}>
 							<Link to={breadcrumb.path}>
-								<p className={clsx(index === 0 && 'text-active')}>{breadcrumb.title}</p>
+								<p className={clsx({ 'text-active': index === 0 })}>{breadcrumb.title}</p>
 							</Link>
 							{index < breadcrumbs.length - 1 && <span>/</span>}
 						</div>
@@ -27,7 +27,7 @@ export const AppHeader = ({ breadcrumbs }: AppHeaderProps) => {
 				</div>
 			</div>
 			<div className="flex space-x-20">
-				<Search placeholder="Search" className="w-40" />
+				<Search placeholder="Search" className="w-48" />
 				<div className="flex space-x-5 items-center">
 					<img src={personIcon} alt="person" className="w-12 h-12" />
 					<p className="text-header">Admin J.Smith</p>

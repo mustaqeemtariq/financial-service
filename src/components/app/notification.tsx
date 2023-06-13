@@ -1,8 +1,8 @@
+import { Dispatch, SetStateAction } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+
 import { companyIcon, personIcon } from 'assets/icons'
 import clsx from 'clsx'
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
-
 interface NotificationProps {
 	expandable?: boolean
 	openNotifications?: boolean
@@ -15,8 +15,12 @@ export const Notification = ({
 	expandable = true
 }: NotificationProps) => {
 	return (
-		<div className={clsx('relative bg-stats min-h-full', !openNotifications ? 'px-4' : 'p-6')}>
-			<div className={clsx('space-y-5', !openNotifications && 'hidden')}>
+		<div
+			className={clsx('relative bg-stats min-h-full', {
+				'px-4': !openNotifications,
+				'p-6': openNotifications
+			})}>
+			<div className={clsx('space-y-5', { hidden: !openNotifications })}>
 				<h5 className="text-sm font-semibold">Notifications</h5>
 				<div>
 					<p className="text-sm">ABC Company Calling</p>
@@ -43,8 +47,9 @@ export const Notification = ({
 				onClick={() => setOpenNotifications?.(false)}
 				className={clsx(
 					'absolute flex cursor-pointer items-center justify-center inset-y-1/2 right-full bg-stats h-20 w-3.5',
-					!openNotifications && 'hidden',
-					!expandable && 'hidden'
+					{
+						hidden: !openNotifications || !expandable
+					}
 				)}>
 				<ChevronRightIcon className="h-4 w-4 opacity-30" aria-hidden="true" />
 			</div>
@@ -52,8 +57,9 @@ export const Notification = ({
 				onClick={() => setOpenNotifications?.(true)}
 				className={clsx(
 					'absolute flex cursor-pointer items-center justify-center inset-y-1/2 right-full align-middle bg-stats h-20 w-3.5',
-					openNotifications && 'hidden',
-					!expandable && 'hidden'
+					{
+						hidden: openNotifications || !expandable
+					}
 				)}>
 				<ChevronLeftIcon className="h-4 w-4 opacity-30" aria-hidden="true" />
 			</div>

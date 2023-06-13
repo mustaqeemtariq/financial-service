@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
 	Bars3Icon,
 	ChartBarIcon,
@@ -7,10 +8,7 @@ import {
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { NavLink, useLocation } from 'react-router-dom'
-
 import { Disclosure } from '@headlessui/react'
-import { useState } from 'react'
-
 interface SidebarProps {
 	children: React.ReactNode
 }
@@ -25,6 +23,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 			children: [{ name: 'clients', href: '/' }]
 		},
 		{
+			name: 'Advisors',
+			icon: UsersIcon,
+			current: false,
+			children: [{ name: 'Report', href: '/' }]
+		},
+		{
 			name: 'Connect',
 			icon: UsersIcon,
 			current: false,
@@ -32,12 +36,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 		},
 		{
 			name: 'Reports',
-			icon: UsersIcon,
-			current: false,
-			children: [{ name: 'Report', href: '/' }]
-		},
-		{
-			name: 'Advisors',
 			icon: UsersIcon,
 			current: false,
 			children: [
