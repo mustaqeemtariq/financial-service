@@ -37,7 +37,14 @@ module.exports = {
 		'react/jsx-key': ['warn'],
 		'@typescript-eslint/no-extra-semi': ['warn'],
 		'@typescript-eslint/no-empty-function': [0],
-		'@typescript-eslint/no-unused-vars': [0],
+		'@typescript-eslint/no-unused-vars': [
+			'warn',
+			{
+				vars: 'all',
+				args: 'after-used',
+				ignoreRestSiblings: false
+			}
+		],
 		'react/jsx-uses-react': 0,
 		'react/react-in-jsx-scope': 0
 	},

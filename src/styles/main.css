@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.tw-table-td {
+	  @apply whitespace-nowrap px-3 py-3 text-base text-gray-500  border-r border-slate-300
+	}
+	.tw-table-th {
+	  @apply px-3 py-3.5 text-left text-lg font-semibold text-gray-900 border-l border-slate-300
+	}
+	.tw-table-span {
+	  @apply inline-flex rounded-full px-3  font-normal p-1 text-base leading-5 text-white
+	}  
+  }
+
+  @layer utilities {
+	.input-cursor-pointer::-webkit-calendar-picker-indicator {
+	  @apply cursor-pointer;
+	}
+  }
+
 body {
 	touch-action: pan-x pan-y;
 }

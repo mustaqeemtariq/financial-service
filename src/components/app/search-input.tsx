@@ -8,7 +8,7 @@ type SearchInputProps = React.DetailedHTMLProps<
 
 export const Search = ({ className, placeholder, ...restProp }: SearchInputProps) => {
 	return (
-		<div>
+		<div className={clsx(className)}>
 			<div className="relative mt-1 rounded-md">
 				<div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
 					<MagnifyingGlassIcon
@@ -21,10 +21,7 @@ export const Search = ({ className, placeholder, ...restProp }: SearchInputProps
 					{...restProp}
 					name="search"
 					id="search"
-					className={clsx(
-						'block p-1.5 pl-10 rounded outline-none bg-search border-transparent text-base',
-						className?.includes('w-') ? className : 'sm:w-[420px]'
-					)}
+					className="w-full p-1.5 pl-10 rounded outline-none bg-search border-transparent text-base"
 					placeholder={placeholder ?? 'Search...'}
 					autoComplete="off"
 				/>

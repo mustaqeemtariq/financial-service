@@ -1,5 +1,7 @@
-const tailwindcss = require('tailwindcss')
+import tailwindcss from 'tailwindcss'
 
-module.exports = {
-	plugins: [tailwindcss('./tailwind.config.js'), require('autoprefixer'), require('postcss-import')]
-}
+export const plugins = [
+	tailwindcss('./tailwind.config.js'),
+	require('autoprefixer'),
+	require('postcss-import')
+]

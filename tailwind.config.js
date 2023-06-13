@@ -18,7 +18,8 @@ module.exports = {
 				header: '#1C1C1C',
 				heading: '#2A3046',
 				button: '#EF5600',
-				pagination: '#D8E0FA'
+				pagination: '#D8E0FA',
+				strapline: '#8A93B0'
 			}
 		}
 	},
