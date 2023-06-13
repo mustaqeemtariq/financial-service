@@ -1,4 +1,3 @@
-import React from 'react'
 import { AppLayout } from 'components/app/layout'
 import { DashboardStatsCard } from 'components/dashboard/stats-card'
 import { DashboardCard } from 'components/dashboard/card'
@@ -7,19 +6,21 @@ import { Container } from 'components/app/container'
 import { AppFooter } from 'components/app/footer'
 import { companyIcon, personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
+import { Filter } from 'components/inputs/filter'
 
 export const Dashboard = () => {
 	const breadcrumbs = [
 		{ title: 'Dashboards', path: '/' },
 		{ title: 'Admin', path: '/' }
 	]
+	const options = [{ name: 'This Week' }, { name: 'This Month' }, { name: 'This Year' }]
 	return (
 		<AppLayout>
 			<AppHeader breadcrumbs={breadcrumbs} />
 			<Container>
 				<div className="space-y-16 basis-3/4 pt-8">
 					<div className="space-y-5">
-						<h5 className="text-sm font-semibold text-heading">This Week</h5>
+						<Filter options={options} />
 						<div className="grid grid-cols-2 gap-7 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-7">
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
 							<DashboardStatsCard title="Companies" stats={111} percentage="11.01%" />
