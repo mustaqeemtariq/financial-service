@@ -29,7 +29,12 @@ export const Dashboard = () => {
 						</div>
 					</div>
 					<div className="space-y-5">
-						<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
+						<div className="flex justify-between items-center">
+							<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
+							<p className="font-medium text-sm cursor-pointer underline text-neutral">
+								View Report
+							</p>
+						</div>
 						<div className="grid grid-cols-2 gap-7 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-7">
 							<DashboardCard image={personIcon} name="Advisor Name" status="Available" />
 							<DashboardCard image={personIcon} name="Advisor Name" status="Inactive" />
