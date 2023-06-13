@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import clsx from 'clsx'
-
+import React, { useState } from 'react'
 import { AppLayout } from 'components/app/layout'
 import { Container } from 'components/app/container'
 import { DashboardCard } from 'components/dashboard/card'
@@ -8,17 +6,14 @@ import { AppFooter } from 'components/app/footer'
 import { AppHeader } from 'components/app/header'
 import { personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import { Filter } from 'components/inputs/filter'
+import clsx from 'clsx'
 
-export const Reports = () => {
+export const Advisors = () => {
 	const breadcrumbs = [
-		{ title: 'Reports', path: '/reports/top-advisors' },
-		{ title: 'Top Advisors', path: '/reports/top-advisors' }
+		{ title: 'Advisors', path: '/advisors' },
+		{ title: 'All Advisors', path: '/advisors' }
 	]
-	const options = [
-		{ name: 'All (Hired/ Available/ In-active)' },
-		{ name: 'All (Hired/ Available/ In-active)' }
-	]
+
 	const [open, setOpen] = useState(false)
 
 	return (
@@ -26,10 +21,7 @@ export const Reports = () => {
 			<AppHeader breadcrumbs={breadcrumbs} />
 			<Container>
 				<div className="pt-8 space-y-5">
-					<div className="flex justify-between items-center">
-						<h2 className="font-semibold text-xl text-heading">Top Advisors</h2>
-						<Filter options={options} />
-					</div>
+					<h2 className="font-semibold text-xl text-heading">All Advisors</h2>
 					<div
 						className={clsx(
 							'grid gap-y-7 gap-x-11',
