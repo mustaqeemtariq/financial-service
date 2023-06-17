@@ -5,7 +5,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 interface PaginationProps {
 	items?: Array<any>
 	itemsPerPage?: number
-	showButton?: boolean
+	showButton: boolean
+	showSelect: boolean
 	renderComponent: (item: any) => JSX.Element
 	totalSelectedPages?: number
 }
@@ -18,7 +19,8 @@ const DEFAULT_PAGE_INDEX = 0
 export const Pagination = ({
 	items,
 	renderComponent,
-	showButton = false,
+	showSelect,
+	showButton,
 	totalSelectedPages = 100
 }: PaginationProps) => {
 	const [pageIndex, setPageIndex] = useState(DEFAULT_PAGE_INDEX)
@@ -106,24 +108,26 @@ export const Pagination = ({
 								</button>
 							</div>
 							<div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between ">
-								<div>
-									<p className="text-base border font-semibold border-pagination rounded w-80 text-center py-3.5 bg-pagination text-heading whitespace-nowrap">
-										Showing
-										<select
-											value={itemsPerPage}
-											onChange={event => {
-												setItemsPerPage(Number(event.target.value))
-											}}
-											className="py-1 pr-5 border-transparent bg-pagination text-neutral ring-0 focus:ring-0 focus:outline-none">
-											{ShowItemPerPageOptions.map(option => (
-												<option key={option} className="font-semibold" value={option}>
-													{option}
-												</option>
-											))}
-										</select>
-										of <span className="font-semibold"> {totalSelectedPages} </span>
-									</p>
-								</div>
+								{showSelect && (
+									<div>
+										<p className="text-base border font-semibold border-pagination rounded w-80 text-center py-3.5 bg-pagination text-heading whitespace-nowrap">
+											Showing
+											<select
+												value={itemsPerPage}
+												onChange={event => {
+													setItemsPerPage(Number(event.target.value))
+												}}
+												className="py-1 pr-5 border-transparent bg-pagination text-neutral ring-0 focus:ring-0 focus:outline-none">
+												{ShowItemPerPageOptions.map(option => (
+													<option key={option} className="font-semibold" value={option}>
+														{option}
+													</option>
+												))}
+											</select>
+											of <span className="font-semibold"> {totalSelectedPages} </span>
+										</p>
+									</div>
+								)}
 
 								{showButton && (
 									<div className="w-full sm:w-auto text-right mt-2 sm:mt-0">
@@ -147,7 +151,7 @@ export const Pagination = ({
 													className={clsx(
 														'relative inline-flex items-center px-4 py-2 text-sm font-medium',
 														page === pageIndex + 1
-															? 'className="relative z-10 inline-flex items-center border border-indigo-600 bg-indigo-600 text-white rounded-full px-4 py-2 text-sm font-medium focus:z-20'
+															? 'className="relative z-10 inline-flex items-center bg-pagination rounded-full px-4 py-2 text-sm font-medium focus:z-20'
 															: 'text-gray-500'
 													)}
 													onClick={() => goToPage(page - 1)}>
