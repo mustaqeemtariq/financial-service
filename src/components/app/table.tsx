@@ -5,9 +5,17 @@ type TableParams = {
 	headers?: string[]
 	items: any
 	renderComponent: (item: any) => ReactElement<any, any>
+	showButton?: boolean
+	showSelect?: boolean
 }
 
-export const Table = ({ headers, items, renderComponent }: TableParams) => {
+export const Table = ({
+	headers,
+	items,
+	renderComponent,
+	showButton = false,
+	showSelect = false
+}: TableParams) => {
 	return (
 		<table className="min-w-full table-fixed">
 			<thead>
@@ -22,8 +30,8 @@ export const Table = ({ headers, items, renderComponent }: TableParams) => {
 			<Pagination
 				items={items}
 				renderComponent={renderComponent}
-				showButton={false}
-				showSelect={false}
+				showButton={showButton}
+				showSelect={showSelect}
 			/>
 		</table>
 	)
