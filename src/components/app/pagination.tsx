@@ -117,7 +117,7 @@ export const Pagination = ({
 												onChange={event => {
 													setItemsPerPage(Number(event.target.value))
 												}}
-												className="py-1 pr-5 border-transparent bg-pagination text-neutral ring-0 focus:ring-0 focus:outline-none">
+												className="py-1 pr-5 border-transparent bg-pagination text-neutral focus:border-none focus:ring-0">
 												{ShowItemPerPageOptions.map(option => (
 													<option key={option} className="font-semibold" value={option}>
 														{option}
