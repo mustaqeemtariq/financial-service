@@ -1,10 +1,10 @@
+import { companyIcon, personIcon } from 'assets/icons'
 import { AppLayout } from 'components/app/layout'
 import { DashboardStatsCard } from 'components/dashboard/stats-card'
 import { DashboardCard } from 'components/dashboard/card'
 import { AppHeader } from 'components/app/header'
 import { Container } from 'components/app/container'
 import { AppFooter } from 'components/app/footer'
-import { companyIcon, personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
 import { Filter } from 'components/fields/filter'
 

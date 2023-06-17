@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
-import { Pagination } from './pagination'
+
+import { Pagination } from 'components/app/pagination'
 
 type TableParams = {
 	headers?: string[]

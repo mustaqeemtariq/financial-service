@@ -1,10 +1,11 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import { Advisors } from 'pages/advisors'
 import { AddAdvisor } from 'pages/advisors/add'
 import { AdvisorDetails } from 'pages/advisors/details'
 import { Dashboard } from 'pages/dashboard'
 import { Reports } from 'pages/reports'
 import { Bookings } from 'pages/reports/bookings'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 export const Routing = () => {
 	return (

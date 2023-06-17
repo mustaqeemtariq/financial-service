@@ -1,6 +1,6 @@
-import clsx from 'clsx'
 import { InputHTMLAttributes } from 'react'
 import { UseFormRegister, FieldErrors, FieldValues } from 'react-hook-form'
+import clsx from 'clsx'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	labelText?: string

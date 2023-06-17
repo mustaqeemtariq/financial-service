@@ -1,8 +1,7 @@
 import { useState } from 'react'
-
 import clsx from 'clsx'
-import { personIcon } from 'assets/icons'
 
+import { personIcon } from 'assets/icons'
 import { AdvisorForm } from 'components/advisor/form'
 import { Container } from 'components/app/container'
 import { AppFooter } from 'components/app/footer'
