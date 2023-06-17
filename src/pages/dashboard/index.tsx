@@ -6,7 +6,7 @@ import { Container } from 'components/app/container'
 import { AppFooter } from 'components/app/footer'
 import { companyIcon, personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import { Filter } from 'components/inputs/filter'
+import { Filter } from 'components/fields/filter'
 
 export const Dashboard = () => {
 	const breadcrumbs = [

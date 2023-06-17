@@ -8,7 +8,7 @@ import { AppFooter } from 'components/app/footer'
 import { AppHeader } from 'components/app/header'
 import { personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import { Filter } from 'components/inputs/filter'
+import { Filter } from 'components/fields/filter'
 
 export const Reports = () => {
 	const breadcrumbs = [
