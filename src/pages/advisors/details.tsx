@@ -7,7 +7,8 @@ import { AppLayout } from 'components/app/layout'
 import { Notification } from 'components/app/notification'
 import { companyIcon, pdfIcon, personIcon } from 'assets/icons'
 import { AppFooter } from 'components/app/footer'
-import { Table } from 'components/app/table'
+import { AdvisorInterview } from 'components/advisor/interview'
+import { AdvisorBooking } from 'components/advisor/booking'
 
 export const AdvisorDetails = () => {
 	const breadcrumbs = [
@@ -70,26 +71,6 @@ export const AdvisorDetails = () => {
 	const [tabs, setTabs] = useState('details')
 	const [interview, setInterview] = useState('all')
 
-	const renderInterviewsTBody = (items: any) => {
-		return (
-			<tbody>
-				{items.map((item: any, index: number) => (
-					<tr
-						key={index}
-						className={clsx('border-b border-pagination', {
-							'border-t border-pagination': index === 0
-						})}>
-						<td className="tw-table-td">May 10, 2023</td>
-						<td className="tw-table-td">{item.title}</td>
-						<td className="tw-table-td">{item.title}</td>
-						<td className="tw-table-td">{item.status}</td>
-						<td className="tw-table-td">{item.status}</td>
-						<td className="tw-table-td">{item.price}</td>
-					</tr>
-				))}
-			</tbody>
-		)
-	}
 	return (
 		<AppLayout>
 			<AppHeader breadcrumbs={breadcrumbs} />
@@ -169,34 +150,17 @@ export const AdvisorDetails = () => {
 							<div className={clsx({ hidden: tabs !== 'details' })}>
 								<p className="text-strapline font-semibold text-sm pb-3">Booking Status</p>
 								{items.length > 0 ? (
-									items.map((item: any, index: number) => (
-										<div
-											key={index}
-											className={clsx(
-												'border-b border-pagination px-3 py-6 grid grid-col-5 grid-flow-col items-center',
-												open ? 'gap-x-4' : 'gap-x-11',
-												{ 'border-t': index === 0 }
-											)}>
-											<p className="text-sm">{item?.price}</p>
-											<p className="text-sm">{item?.status}</p>
-											<p className="text-sm">{item?.date}</p>
-											<p className="text-sm">{item?.title}</p>
-											<div className={clsx('flex items-center', open ? 'space-x-2' : 'space-x-4')}>
-												<img src={item?.company?.image} alt="person" className="w-14 h-14" />
-												<p className="font-semibold text-sm">{item?.company?.name}</p>
-											</div>
-										</div>
-									))
+									<AdvisorBooking data={items} />
 								) : (
 									<p className="text-heading mt-6">No record found</p>
 								)}
 							</div>
 							<div className={clsx({ hidden: tabs !== 'interviews' })}>
-								<Table
-									headers={['Date', 'Job Role', 'Client', 'Status', 'Hiring Period', 'Hired For']}
-									items={items}
-									renderComponent={renderInterviewsTBody}
-								/>
+								{items.length > 0 ? (
+									<AdvisorInterview data={items} />
+								) : (
+									<p className="text-heading mt-6">No interviews found</p>
+								)}
 							</div>
 						</div>
 					</div>
