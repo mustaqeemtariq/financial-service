@@ -4,7 +4,7 @@
 
 @layer components {
 	.tw-table-td {
-	  @apply whitespace-nowrap px-3 py-6 text-sm text-heading
+	  @apply px-3 py-6 text-sm text-heading
 	}
 	.tw-table-th {
 	  @apply px-3 py-3.5 text-left font-semibold text-sm text-table 2xl:text-base
