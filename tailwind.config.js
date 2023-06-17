@@ -19,7 +19,13 @@ module.exports = {
 				heading: '#2A3046',
 				button: '#EF5600',
 				pagination: '#D8E0FA',
-				strapline: '#8A93B0'
+				strapline: '#8A93B0',
+				section: '#D0DBFF',
+				table: '#545F84',
+				interview: '#5E72B9'
+			},
+			backgroundImage: {
+				'advisor-image': "url('assets/pngs/person.png')"
 			}
 		}
 	},
