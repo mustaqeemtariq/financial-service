@@ -8,7 +8,7 @@ import { AppHeader } from 'components/app/header'
 import { Pagination } from 'components/app/pagination'
 import { companyIcon, personIcon } from 'assets/icons'
 import { Notification } from 'components/app/notification'
-import { InputDate } from 'components/inputs/date'
+import { InputDate } from 'components/fields/date'
 import { toast } from 'react-hot-toast'
 
 export const Bookings = () => {
@@ -124,6 +124,7 @@ export const Bookings = () => {
 				<div className="space-y-5 pt-8 pr-6 sm:pr-8">
 					<div className="flex justify-between items-center">
 						<h2 className="font-semibold text-xl text-heading">Bookings</h2>
+
 						<div className="flex items-center space-x-2">
 							<InputDate
 								value={selectedDate.from}
@@ -138,6 +139,8 @@ export const Bookings = () => {
 						totalSelectedPages={items?.length}
 						items={items}
 						renderComponent={renderComponent}
+						showButton={false}
+						showSelect={true}
 					/>
 					<AppFooter />
 				</div>
