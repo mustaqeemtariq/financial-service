@@ -6,6 +6,7 @@ import { AdvisorDetails } from 'pages/advisors/details'
 import { Dashboard } from 'pages/dashboard'
 import { Reports } from 'pages/reports'
 import { Bookings } from 'pages/reports/bookings'
+import { PageNotFound } from '404'
 
 export const Routing = () => {
 	return (
@@ -17,6 +18,7 @@ export const Routing = () => {
 				<Route path="/advisors" element={<Advisors />} />
 				<Route path="/advisors/:name" element={<AdvisorDetails />} />
 				<Route path="/advisors/add" element={<AddAdvisor />} />
+				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 		</BrowserRouter>
 	)
